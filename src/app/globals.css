@@ -1,0 +1,362 @@
+/* e-Ukraine Font Family */
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('/fonts/e-Ukraine-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('/fonts/e-Ukraine-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* BibliotekaPlus Brand Colors */
+  --bp-bg: #fffdf3;
+  --bp-bg-content: #ffffff;
+  --bp-text: #1a1a1a;
+  --bp-text-secondary: #5a5a5a;
+  --bp-text-muted: #8a8a8a;
+  --bp-border: #e5e0d5;
+  --bp-accent: #f38512;
+  --bp-accent-hover: #d97510;
+  --bp-accent-light: rgba(243, 133, 18, 0.08);
+  --bp-maxw: 900px;
+
+  --bp-font: 'e-Ukraine', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  font-family: var(--bp-font);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--bp-text);
+  background: var(--bp-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--bp-accent);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--bp-accent-hover);
+}
+
+/* ===== Page Structure ===== */
+.bp-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Header ===== */
+.bp-header {
+  background: var(--bp-bg);
+  border-bottom: 1px solid var(--bp-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.bp-header-inner {
+  max-width: var(--bp-maxw);
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bp-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--bp-text);
+}
+
+.bp-logo:hover {
+  color: var(--bp-text);
+  text-decoration: none;
+}
+
+.bp-logo-img {
+  height: 20px;
+  width: auto;
+}
+
+.bp-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bp-lang-btn {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--bp-text-secondary);
+  padding: 8px 14px;
+  font-family: var(--bp-font);
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.bp-lang-btn:hover {
+  background: var(--bp-accent-light);
+  color: var(--bp-accent);
+}
+
+.bp-lang-btn[aria-pressed="true"] {
+  background: var(--bp-accent);
+  color: #fff;
+}
+
+.bp-menu-btn {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bp-text);
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+
+.bp-menu-btn:hover {
+  background: var(--bp-accent-light);
+}
+
+/* ===== Main Content ===== */
+.bp-wrap {
+  flex: 1;
+  max-width: var(--bp-maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.bp-main {
+  padding: 40px 0 60px;
+}
+
+/* Content Card */
+.bp-content {
+  background: var(--bp-bg-content);
+  border: 1px solid var(--bp-border);
+  padding: 48px;
+}
+
+@media (max-width: 640px) {
+  .bp-content {
+    padding: 32px 20px;
+  }
+  
+  .bp-header-inner {
+    padding: 14px 16px;
+  }
+  
+  .bp-wrap {
+    padding: 0 16px;
+  }
+}
+
+/* ===== Logo in Content ===== */
+.bp-content-logo {
+  display: inline-block;
+  margin-bottom: 32px;
+}
+
+.bp-content-logo img {
+  height: 22px;
+  width: auto;
+}
+
+/* ===== Typography ===== */
+.bp-content h1 {
+  margin: 0 0 20px;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--bp-text);
+}
+
+.bp-content h2 {
+  margin: 40px 0 16px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--bp-text);
+}
+
+.bp-content p {
+  margin: 16px 0;
+  line-height: 1.75;
+  color: var(--bp-text);
+}
+
+/* Main Bullet List */
+.bp-content > section > ul {
+  margin: 24px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bp-content > section > ul > li {
+  margin: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--bp-border);
+  line-height: 1.75;
+}
+
+.bp-content > section > ul > li:first-child {
+  border-top: 1px solid var(--bp-border);
+}
+
+.bp-content > section > ul > li > strong {
+  color: var(--bp-text);
+}
+
+/* Nested Lists */
+.bp-content ul ul,
+.bp-content ol {
+  margin: 12px 0 12px 24px;
+  padding: 0;
+  list-style: disc;
+}
+
+.bp-content ul ul ul {
+  margin: 8px 0 8px 24px;
+  list-style: circle;
+}
+
+.bp-content ul ul li,
+.bp-content ol li {
+  margin: 6px 0;
+  line-height: 1.65;
+  color: var(--bp-text);
+}
+
+.bp-content li strong {
+  color: var(--bp-text);
+  font-weight: 700;
+}
+
+/* Inline Link */
+.bp-link {
+  color: var(--bp-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.bp-link:hover {
+  color: var(--bp-accent-hover);
+}
+
+/* Note Box */
+.bp-note {
+  margin: 24px 0;
+  padding: 20px 24px;
+  background: var(--bp-accent-light);
+  border-left: 4px solid var(--bp-accent);
+  color: var(--bp-text);
+  line-height: 1.65;
+}
+
+.bp-note strong {
+  color: var(--bp-text);
+}
+
+/* ===== Footer ===== */
+.bp-footer {
+  background: var(--bp-bg);
+  border-top: 1px solid var(--bp-border);
+  margin-top: auto;
+}
+
+.bp-footer-inner {
+  max-width: var(--bp-maxw);
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.bp-footer-logo img {
+  height: 18px;
+  width: auto;
+  opacity: 0.7;
+}
+
+.bp-footer-text {
+  color: var(--bp-text-muted);
+  font-size: 14px;
+}
+
+.bp-footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.bp-footer-links a {
+  color: var(--bp-text-secondary);
+  font-size: 14px;
+}
+
+.bp-footer-links a:hover {
+  color: var(--bp-accent);
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .bp-header,
+  .bp-footer,
+  .bp-nav {
+    display: none !important;
+  }
+
+  .bp-content {
+    border: none !important;
+    padding: 0 !important;
+  }
+
+  body {
+    background: #fff !important;
+  }
+
+  a {
+    color: #000 !important;
+  }
+
+  .bp-note {
+    border: 1px solid #ccc !important;
+    background: #f9f9f9 !important;
+  }
+}
